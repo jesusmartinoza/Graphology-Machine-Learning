@@ -3,8 +3,8 @@ Graphology is the study of human personality through writing. It is a projective
 This repo is an effort to use Machine Learning to do an analysis using fixed rules of graphology. A more detailed log and explanation about this project is [here](https://github.com/jesusmartinoza/Graphology-ML/blob/master/Report.pdf)
 
 ## Result
-![](https://github.com/jesusmartinoza/Graphology-ML/blob/master/assets/web-platform1.png?raw=true)
-![](https://github.com/jesusmartinoza/Graphology-ML/blob/master/assets/web-platform2.png?raw=true)
+![](https://github.com/jesusmartinoza/Graphology-ML/blob/master/Assets/web-platform1.png?raw=true)
+![](https://github.com/jesusmartinoza/Graphology-ML/blob/master/Assets/web-platform2.png?raw=true)
 
 ## Credits
 Created by Jesús Alberto Martínez Mendoza for the [Artificial Intelligence Course](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://infocomp.ingenieria.uaslp.mx/cominf/public/docs/temarios/2812.pdf) by UASLP
