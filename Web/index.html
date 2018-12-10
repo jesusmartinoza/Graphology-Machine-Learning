@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Graphology AI</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="assets/css/material-dashboard.css" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+
+    <link href="assets/css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <h1>Welcome to Graphology AI</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="card">
+                                <div class="card-content">
+                                    <h3 class="card-title">Upload picture of handwritten text</h3>
+                                    <div class="form-group">
+                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail">
+                                                <img src="assets/img/image_placeholder.jpg" alt="...">
+                                            </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                            <div>
+                                                <span class="btn btn-rose btn-round btn-file">
+                                                    <span class="fileinput-new">Select image</span>
+                                                    <span class="fileinput-exists">Change</span>
+                                                    <input id="file-image" type="file" name="..." />
+                                                </span>
+                                                <a id="start" class="btn btn-success btn-round fileinput-exists">Start</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-text" data-background-color="orange">
+                                    <h4 class="card-title">Results</h4>
+                                    <p class="category">General information about the analysis</p>
+                                </div>
+                                <div class="card-content">
+                                        <h4>
+                                          Progress
+                                          <div class="progress progress-line-warning">
+                                              <div id="progress" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                              </div>
+                                          </div>
+                                        </h4>
+
+                                        <h4>
+                                            Status
+                                            <small id="status" class="text-muted">Image not loaded</small>
+                                        </h4>
+                                        <h4>Transcripted text</h4>
+                                        <blockquote class="blockquote text-left">
+                                            <p id="transcripted-text" class="mb-0">Here will be the transcripted text</p>
+                                        </blockquote>
+                                        <h4>
+                                          Confidence
+                                          <small id="confidence" class="text-muted">0%</small>
+                                      </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-text" data-background-color="orange">
+                                    <h4 class="card-title">OCR result</h4>
+                                    <p class="category">Detection of individual symbols</p>
+                                </div>
+                                <div class="card-content">
+                                    <canvas id='img-canvas' class="col-md-12" style="margin-bottom: 1em"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="card">
+                                    <div class="card-header card-header-text" data-background-color="orange">
+                                        <h4 class="card-title">Graphology results</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <img id="m-result" src="assets/img/placeholder.jpg"/>
+                                        <strong>→</strong>
+                                        <img id="m-result2" />
+                                        <p id="worried-res-text"></p>
+                                        <p>Probality: <strong id="worried-res-prob"></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/material.min.js" type="text/javascript"></script>
+<script src="assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+<!-- Forms Validations Plugin -->
+<script src="assets/js/jquery.validate.min.js"></script>
+<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+<script src="assets/js/moment.min.js"></script>
+<!--  Charts Plugin -->
+<script src="assets/js/chartist.min.js"></script>
+<!--  Plugin for the Wizard -->
+<script src="assets/js/jquery.bootstrap-wizard.js"></script>
+<!--  Notifications Plugin    -->
+<script src="assets/js/bootstrap-notify.js"></script>
+<!-- DateTimePicker Plugin -->
+<script src="assets/js/bootstrap-datetimepicker.js"></script>
+<!-- Vector Map plugin -->
+<script src="assets/js/jquery-jvectormap.js"></script>
+<!-- Sliders Plugin -->
+<script src="assets/js/nouislider.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<!-- Select Plugin -->
+<script src="assets/js/jquery.select-bootstrap.js"></script>
+<!--  DataTables.net Plugin    -->
+<script src="assets/js/jquery.datatables.js"></script>
+<!-- Sweet Alert 2 plugin -->
+<script src="assets/js/sweetalert2.js"></script>
+<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+<script src="assets/js/jasny-bootstrap.min.js"></script>
+<!--  Full Calendar Plugin    -->
+<script src="assets/js/fullcalendar.min.js"></script>
+<!-- TagsInput Plugin -->
+<script src="assets/js/jquery.tagsinput.js"></script>
+<!-- Material Dashboard javascript methods -->
+<script src="assets/js/material-dashboard.js"></script>
+
+<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> </script>
+<script src="assets/js/main.js"></script>
+
+</html>

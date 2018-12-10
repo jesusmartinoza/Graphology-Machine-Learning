@@ -1,0 +1,16 @@
+#m-result {
+    width: 100px;
+}
+
+/*#m-result2 {
+    filter: contrast(200%) invert(100%);
+}*/
+
+#img-canvas {
+    width: 90%;
+}
+
+.main-panel {
+    float: none;
+    width: auto;
+}
